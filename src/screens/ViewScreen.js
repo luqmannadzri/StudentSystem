@@ -20,7 +20,10 @@ export default class ViewScreen extends Component {
   }
 
   componentDidMount() {
-    let query = studentsRef.orderByChild("matricno").equalTo(this.props.matricno);
+	const matricno_null = this.props.navigation.getParam(matricno,'1728571');
+	  const matricno = this.props.navigation.state.params.matricno;
+	  console.log("aku jumpa",matricno);
+    let query = studentsRef.orderByChild("matricno").equalTo(matricno);
       query.once('value', (snapshot) => {
       let data = snapshot.val();
           if(data){

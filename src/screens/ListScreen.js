@@ -55,6 +55,11 @@ export default class ListScreen extends Component {
         });
   }
 
+goToViewScreen = (matricno) => {
+	console.log("tekan matrino",matricno);
+	this.props.navigation.navigate('View',{matricno: matricno});
+}
+
   render() {
     return (
       <Container>
@@ -63,8 +68,6 @@ export default class ListScreen extends Component {
         <Text style={{textAlign: "center", height: 40, fontWeight: "bold", marginTop: 20}}>Student List</Text>
         <List vertical={true}>
         <StudentList students={this.state.students} onPress={(matricno) => { this.props.navigation.navigate('View', {matricno: matricno})}}
-
-        
         onLongPress={(matricno) => {this.deleteConfirmation(matricno)}} />
 
         

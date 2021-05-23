@@ -1,14 +1,14 @@
 import { db } from '../config/db';
 
 export const addStudent =  (name, matricno, major, year, status) => {
-    db.ref('/students').child(matricno).set({
+	db.ref('/students').child(matricno).set({
         name: name,
         matricno: matricno,
         major: major,
         year: year,
         status: status
     }, () => {
-        this.props.navigation.navigate("List");
+        
         })
 }
 
@@ -20,7 +20,8 @@ export const updateStudent =  (name, matricno, major, year, status) => {
         year: year,
         status: status
     }, () => {
-        this.props.navigation.navigate("List");
+        //this.props.navigation.navigate("List");
+	alert("List");
         })
 }
 
